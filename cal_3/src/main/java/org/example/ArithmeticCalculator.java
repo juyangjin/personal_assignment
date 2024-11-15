@@ -3,45 +3,36 @@ package org.example;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class ArithmeticCalculator<T> {
-    Queue<Double> SaveResult = new LinkedList<>();
-    private double one, two, result;
-    private char op;
-
-    public Queue<Double> getSaveResult() {
-        return SaveResult;
-    }
-
-    public double getOne() {
-        return one;
-    }
-
-    public void setOne(int one) {
-        this.one = one;
-    }
-
-    public double getTwo() {
-        return two;
-    }
-
-    public void setTwo(int two) {
-        this.two = two;
-    }
-
-    public void setOp(char op) {
-        this.op = op;
-    }
-
-    public char getOp() {
-        return op;
-    }
-
-    public double getResult() {
-        return result;
-    }
-
-    public void removeResult() {
+public class ArithmeticCalculator<T extends Number> {
+    private Double firstNumber;
+    private Double secondNumber;
+    private OperatorType operatorType;
+    static Queue<Double> SaveResult = new LinkedList<>();
+    public static void removeResult() {
         SaveResult.poll();
+    }
+
+    public ArithmeticCalculator(OperatorType operatorType) {
+        this.operatorType = operatorType;
+    }
+
+    public ArithmeticCalculator() {
+    }
+
+    public void setOperation(OperatorType operatorType) {
+        this.operatorType = operatorType;
+    }
+
+    public void setFirstNumber(Double firstNumber) {
+        this.firstNumber = firstNumber;
+    }
+
+    public void setSecondNumber(Double secondNumber) {
+        this.secondNumber = secondNumber;
+    }
+
+    public Double calculate() {
+        return operatorType.operate(firstNumber, secondNumber);
     }
 
 }
