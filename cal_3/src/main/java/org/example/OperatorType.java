@@ -8,11 +8,13 @@ public enum OperatorType {
 
     private final IOperation<Double> operation;
 
-    <T extends Number> OperatorType(IOperation<T> operation) {
-        this.operation = (IOperation<Double>) operation;
+    OperatorType(IOperation<Double> operation) {
+        this.operation = operation;
     }
-    public <T extends Number> T operate(T firstNumber, T secondNumber) {
-        return (T) operation.operate((Double) firstNumber, (Double) secondNumber);
+
+    public Double operate(Double firstNumber, Double secondNumber) {
+        return operation.operate(firstNumber, secondNumber);
     }
+
 }
 
