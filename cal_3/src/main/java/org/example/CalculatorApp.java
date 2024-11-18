@@ -21,6 +21,12 @@ public class CalculatorApp {
 
         System.out.println("연산 결과 : " + parser.executeCalculator());
         ArithmeticCalculator.SaveResult.add(parser.executeCalculator());
+        ArithmeticCalculator.bigResult.clear(); //아래에서 반복해서 추가할 것이므로 초기화
+        ArithmeticCalculator.SaveResult.forEach(value -> {
+            if (value > ArithmeticCalculator.result) {
+                ArithmeticCalculator.bigResult.add(value);
+            }
+        });
         return true;
     }
 
