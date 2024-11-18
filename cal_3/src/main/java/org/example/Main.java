@@ -13,6 +13,7 @@ public class Main {
         while (calculateEnded){
             try {
                 CalculatorApp.start();
+                System.out.println("현재 결과값보다 큰 값은" + ArithmeticCalculator.bigResult+ "입니다.");
                 System.out.println("현재까지 저장된 값은 " + ArithmeticCalculator.SaveResult + "입니다. 값을 삭제하려면 delete를 입력해주세요.");
                 String del = sc.nextLine();
                 if(del.equals("delete")){

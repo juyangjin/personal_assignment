@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6edbb15-5aa1-46d3-a12b-24306f350ffe" name="Changes" comment=":sparkles:fix:calculator ver_3" />
+    <list default="true" id="b6edbb15-5aa1-46d3-a12b-24306f350ffe" name="Changes" comment=":sparkles:fix:calculator ver_3">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ArithmeticCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ArithmeticCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/CalculatorApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/CalculatorApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,22 +55,22 @@
     &quot;assignee&quot;: &quot;juyangjin&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/juyangjin/personal_assignment.git",
-    "accountId": "544fe67a-6c89-4714-952b-1f464273e994"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/juyangjin/personal_assignment.git&quot;,
+    &quot;accountId&quot;: &quot;544fe67a-6c89-4714-952b-1f464273e994&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "juyangjin",
-    "repository": "personal_assignment"
+    &quot;owner&quot;: &quot;juyangjin&quot;,
+    &quot;repository&quot;: &quot;personal_assignment&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/org/example/App.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -80,7 +87,7 @@
     "Gradle.cal_2 [:org.example.App.main()].executor": "Debug",
     "Gradle.cal_3 [:org.example.Main.main()].executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "three",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/juyang/programming/개인과제/cal_3",
@@ -121,6 +128,7 @@
       <workItem from="1731469868322" duration="101000" />
       <workItem from="1731633761639" duration="5839000" />
       <workItem from="1731640081721" duration="9134000" />
+      <workItem from="1731920062391" duration="4881000" />
     </task>
     <task id="LOCAL-00001" summary=":bug:test:실패파일 못생겼어...">
       <option name="closed" value="true" />
