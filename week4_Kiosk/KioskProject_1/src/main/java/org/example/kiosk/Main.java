@@ -14,18 +14,22 @@ public class Main {
         MenuItem menuItem4 = new MenuItem("4. Hamburger     | W ",5.4," | 비프패티를 기반으로 야채가 들어간 기본버거");
 
         List<MenuItem> menuItems = new ArrayList<>();
+        menuItems.clear();
         menuItems.add(menuItem1);
         menuItems.add(menuItem2);
         menuItems.add(menuItem3);
         menuItems.add(menuItem4);
 
         for(MenuItem m : menuItems){
-            System.out.println(m.getName() + m.getPrice() + m.getExplan());
+            System.out.println(m.print());
         }
         System.out.println("0. 종료           | 종료");
         int num = sc.nextInt();
         if(num == 0) {
             System.out.println("프로그램을 종료합니다.");
+        }else{
+            num--;
+            System.out.println(menuItems.get(num).print());
         }
     }
 }
