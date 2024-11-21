@@ -1,23 +1,37 @@
 package org.example.kiosk;
 
-public class MenuItem(String name,int price, String explan){
-
+public class MenuItem {
     private String name;
-    private int price;
+    private double price;
     private String explan;
 
-    public String name(String name){
-        return this.name = name;
+    public MenuItem(String name, double price, String explan){
+        this.name = name;
+        this.price = price;
+        this.explan = explan;
     }
 
-    public int price(int price){
-        return this.price = price;
+    public String getName() {
+        return name;
     }
 
-    public String explan(String explan){
-        return this.explan = explan;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    // 이름, 가격, 설명 필드 선언하여 관리
-   // 구조에 맞게 함수를 선언해놓고 가져다 사용하세요.
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public String getExplan() {
+        return explan;
+    }
+
+    public void setExplan(String explan) {
+        this.explan = explan;
+    }
 }
