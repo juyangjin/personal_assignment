@@ -1,8 +1,12 @@
 # personal_assignment
   - 스파르타 코딩클럽에서 만든 개인과제 페이지입니다.
 
+
 ## 1.week2-3_계산기 만들기
-### Lv 1. 클래스 없이 기본적인 연산을 수행할 수 있는 계산기 만들기
+<details>
+<summary>Lv 1</summary>
+  
+  ### Lv 1. 클래스 없이 기본적인 연산을 수행할 수 있는 계산기 만들기
 - **양의 정수(0 포함)를 입력받기**
 - **사칙연산 기호(➕,➖,✖️,➗)를 입력받기**
 - **위에서 입력받은 양의 정수 2개와 사칙연산 기호를 사용하여 연산을 진행한 후 결과값을 출력하기**
@@ -20,6 +24,10 @@
   - 해결 방법은 ex로 nextLine을 스캔받기 전에 tmp 변수를 둬서 한 번 nextLine()을 먼저 구동해서 해결
 
 - **자세한 코드 해설은 [계산기 만들기 (1)](https://velog.io/@wndid2008/TIL%EA%B3%84%EC%82%B0%EA%B8%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0-1)에서도 확인할 수 있습니다.**
+</details>
+
+<details>
+<summary>Lv 2</summary>  
   
 ### Lv 2. 클래스를 적용해 기본적인 연산을 수행할 수 있는 계산기 만들기
 - **Lv 1에서 구현한 App 클래스의 main 메서드에 Calculator 클래스가 활용될 수 있도록 수정**
@@ -34,6 +42,10 @@
   - CalculatorApp 에서 최종 결과 출력
 
 - **자세한 코드 해설은 [계산기 만들기 (2)](https://velog.io/@wndid2008/TIL-%EA%B3%84%EC%82%B0%EA%B8%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0-2-%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC-Error)에서도 확인할 수 있습니다.**
+</details>
+
+<details>
+<summary>Lv 3</summary>  
 
 ### 3. Enum, 제네릭, 람다 & 스트림을 이해한 계산기 만들기
 - **현재 사칙연산 계산기는 (➕,➖,✖️,➗) 이렇게 총 4가지 연산 타입으로 구성되어 있습니다.**
@@ -48,9 +60,14 @@
 
 - **자세한 코드 해설은 [계산기 만들기 (3)](https://velog.io/@wndid2008/TIL-%EA%B3%84%EC%82%B0%EA%B8%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0-3)와 [계산기 만들기 (3)-최종](https://velog.io/@wndid2008/TIL-%EA%B3%84%EC%82%B0%EA%B8%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0-3-%EC%B5%9C%EC%A2%85)에서도 확인할 수 있습니다.**
 
+</details>
 
 
 ## 2.week4_키오스크 만들기
+
+<details>
+<summary>Lv 1, 2</summary>  
+  
 ### Lv 1. 기본적인 키오스크를 프로그래밍해보자
 - **햄버거 메뉴 출력 및 선택하기**
 - **`Main`클래스 사용**
@@ -62,25 +79,42 @@
 - **반복문을 활용해 `menuItems`를 탐색하면서 하나씩 접근합니다.**
 
 - **1, 2에 대한 자세한 코드 해설은 [키오스크 만들기 (1)](https://velog.io/@wndid2008/TIL%ED%82%A4%EC%98%A4%EC%8A%A4%ED%81%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0-1)에서도 확인할 수 있습니다.**
-     
+</details>
+
+<details>
+<summary>Lv 3</summary>  
+
 ### Lv 3. 객체 지향 설계를 적용해 순서 제어를 클래스로 관리하기
 - **`Kiosk` 클래스 생성하기**
 - **`main` 함수에서 관리하던 입력과 반복문 로직은 이제 `start` 함수를 만들어 관리합니다.**
 - **`List<MenuItem> menuItems` 는 `Kiosk` 클래스 생성자를 통해 값을 할당합니다.**
 - **`Kiosk` 객체를 생성하고 사용하는 `main` 함수에서 객체를 생성할 때 값을 넘겨줍니다.**
 - **키오스크 프로그램을 시작하는 메서드가 구현되어야 합니다. 메뉴출력, 입력받기, 오류출력, 종료기능 등**
+</details>
+
+<details>
+<summary>Lv 4</summary>  
 
 ### Lv 4. 객체 지향 설계를 적용해 음식 메뉴와 주문 내역을 클래스 기반으로 관리하기
 - **`Menu` 클래스 생성하기**
 - **`List<MenuItem>` 은 `Kiosk` 클래스가 관리하기에 적절하지 않으므로 Menu 클래스가 관리하도록 변경합니다.**
 - **메뉴 카테고리 이름을 반환하는 메서드가 구현되어야 합니다.**
-     
+</details>
+
+<details>
+<summary>Lv 5</summary>  
+
 ### Lv 5. 캡슐화 적용하기
 - **`MenuItem`, `Menu` 그리고 `Kiosk` 클래스의 필드에 직접 접근하지 못하도록 설정합니다.**
 - **Getter와 Setter 메서드를 사용해 데이터를 관리합니다.**
+</details>
+
+<details>
+<summary>Lv 6</summary>  
 
 ### Lv 6. 장바구니 및 구매하기 기능을 추가하기
 - **장바구니 생성 및 관리 기능**
 - **장바구니 출력 및 금액 계산**
 - **장바구니 담기 기능**
 - **주문 기능**
+</details>
