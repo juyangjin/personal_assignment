@@ -1,31 +1,32 @@
-//package org.example.kiosk;
-//
-//import java.util.ArrayList;
-//import java.util.List;
-//
-//public class Menu {
-//    List<MenuItem> menuItems = new ArrayList<>();
-//
-//    public Menu(String menu1, String menu2, String menu3){
-//
-//    }
-//
-//    public List<MenuItem> getMenuItems() {
-//        return menuItems;
-//    }
-//
-//    public void setMenuItems(List<MenuItem> menuItems) {
-//        this.menuItems = menuItems;
-//    }
-//
-//    public void category(int num){
-//        System.out.println(menuItems.indexOf(num));
-//    }
-//
-//
-//    // List에 들어있는 MenuItem을 순차적으로 보여주는 함수
-//    // List를 리턴하는 함수
-//
-//
-//    // 구조에 맞게 함수를 선언해놓고 가져다 사용하세요.
-//}
+package org.example.kiosk;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.example.kiosk.Main.*;
+
+public class Menu {
+    List<MenuItem> menuItems;
+
+    public void select(int i){
+        switch (i){
+            case 1 -> OperType.Burgers.category();
+            case 2 -> OperType.Drinks.category();
+            case 3 -> OperType.Desserts.category();
+        }
+    }
+
+    public void addMenuItems(MenuItem menuItem) {
+        menuItems.add(menuItem);
+        menuItems.add(menuItem);
+        menuItems.add(menuItem);
+        menuItems.add(menuItem);
+    }
+
+    public List<MenuItem> getMenuItems() {
+        return menuItems;
+    }
+
+
+}
