@@ -78,6 +78,13 @@
 - **List<MenuItem> menuItems = new ArrayList<>(); 사용**
 - **반복문을 활용해 `menuItems`를 탐색하면서 하나씩 접근합니다.**
 
+  - Main 클래스에서는 MenuItem 형식의 menuItem1, menuItem2, menuItem3, menuItem4를 만들어서 MenuItem클래스의 생성자로 값을 입력받고 List에 저장
+  - MenuItem 클래스에서는 이름, 가격, 설명 필드를 생성한 뒤에 MenuItem 생성자를 만들고 매개변수를 이름, 가격, 설명으로 저장하여 Main에서 선언된 값을 불러옴
+  - for문으로 메뉴판을 출력하고 if 문으로 프로그램 종료 여부를 확인
+  - 0 이 아니라면 선택한 값에 대한 List 값을 출력하는 데 이 때 출력이 이상하게 나오는 문제 발생
+  - 별도로 출력부에 대한 메서드를 print라는 이름으로 생성하여 정수 + 실수 + 정수를 리턴
+  - 출력문에서 뒷부분을 .print() 해주어 출력문제 해결
+
 - **1, 2에 대한 자세한 코드 해설은 [키오스크 만들기 (1)](https://velog.io/@wndid2008/TIL%ED%82%A4%EC%98%A4%EC%8A%A4%ED%81%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0-1)에서도 확인할 수 있습니다.**
 </details>
 
