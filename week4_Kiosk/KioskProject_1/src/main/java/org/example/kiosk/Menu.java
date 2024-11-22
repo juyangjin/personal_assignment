@@ -6,6 +6,9 @@
 //public class Menu {
 //    List<MenuItem> menuItems = new ArrayList<>();
 //
+//    public Menu(String menu1, String menu2, String menu3){
+//
+//    }
 //
 //    public List<MenuItem> getMenuItems() {
 //        return menuItems;
