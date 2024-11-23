@@ -16,7 +16,6 @@ public class Kiosk {
             sc.nextLine();
             if(menu_num != 0){
                 menu.select(menu_num);
-                menu.addMenuItems();
                 for(MenuItem m : menu.getMenuItems()){
                     System.out.println("안녕");
                     System.out.println(m.toString());
@@ -27,7 +26,7 @@ public class Kiosk {
                 end = false;
             }
             int num = sc.nextInt();
-            if(num == 1 || num == 2 || num == 3 || num == 4){
+            if(num != 0){
                 num--;
                 System.out.println(menu.getMenuItems().get(num).print());
                 System.out.println();
