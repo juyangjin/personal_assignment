@@ -11,6 +11,10 @@ public class MenuItem {
         this.explan = explan;
     }
 
+    public MenuItem() {
+
+    }
+
     public String print(){
         return name + price + explan;
     }
