@@ -19,7 +19,7 @@ public class Kiosk extends Menu{
                 for(int i=0;i<getMenuItems().size();i++){
                     System.out.println(getMenuItems().get(i).print());
                 }
-                System.out.println("0. 종료           | 종료");
+                System.out.println("0. 뒤로가기       | 종료");
             }else{
                 System.out.println("프로그램을 종료합니다.");
                 end = false;
