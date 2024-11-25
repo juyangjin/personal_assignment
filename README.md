@@ -115,7 +115,7 @@
   - 프로그램이 실행되는 동안 예외값이 입력되면 예외처리 문구가 뜨면서 다시 한 번 값을 받게 설정 및 반복 설정
   - 캡슐화의 경우 일부는 미적용된 부분이 있음.
  
-- **3, 4, 5에 대한 자세한 코드 해설은 [키오스크 만들기 (5)](https://velog.io/@wndid2008/TIL-%ED%82%A4%EC%98%A4%EC%8A%A4%ED%81%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0-5-2%EC%B0%A8-Error-fix)에서도 확인할 수 있습니다.**
+- **3, 4, 5에 대한 자세한 코드 해설은 [키오스크 만들기 (2)](https://velog.io/@wndid2008/TIL-%ED%82%A4%EC%98%A4%EC%8A%A4%ED%81%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0-2-%EC%A4%91%EA%B0%84-%ED%95%B4%EA%B2%B0%EA%B3%BC-Error%EC%BD%94%EB%93%9C)와 [키오스크 만들기 (5)](https://velog.io/@wndid2008/TIL-%ED%82%A4%EC%98%A4%EC%8A%A4%ED%81%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0-5-2%EC%B0%A8-Error-fix)에서도 확인할 수 있습니다.**
 </details>
 
 <details>
