@@ -89,7 +89,7 @@
 </details>
 
 <details>
-<summary>Lv 3</summary>  
+<summary>Lv 3, 4, 5</summary>  
 
 ### Lv 3. 객체 지향 설계를 적용해 순서 제어를 클래스로 관리하기
 - **`Kiosk` 클래스 생성하기**
@@ -97,23 +97,25 @@
 - **`List<MenuItem> menuItems` 는 `Kiosk` 클래스 생성자를 통해 값을 할당합니다.**
 - **`Kiosk` 객체를 생성하고 사용하는 `main` 함수에서 객체를 생성할 때 값을 넘겨줍니다.**
 - **키오스크 프로그램을 시작하는 메서드가 구현되어야 합니다. 메뉴출력, 입력받기, 오류출력, 종료기능 등**
-</details>
-
-<details>
-<summary>Lv 4</summary>  
 
 ### Lv 4. 객체 지향 설계를 적용해 음식 메뉴와 주문 내역을 클래스 기반으로 관리하기
 - **`Menu` 클래스 생성하기**
 - **`List<MenuItem>` 은 `Kiosk` 클래스가 관리하기에 적절하지 않으므로 Menu 클래스가 관리하도록 변경합니다.**
 - **메뉴 카테고리 이름을 반환하는 메서드가 구현되어야 합니다.**
-</details>
-
-<details>
-<summary>Lv 5</summary>  
 
 ### Lv 5. 캡슐화 적용하기
 - **`MenuItem`, `Menu` 그리고 `Kiosk` 클래스의 필드에 직접 접근하지 못하도록 설정합니다.**
 - **Getter와 Setter 메서드를 사용해 데이터를 관리합니다.**
+
+  - 인터페이스나 추상클래스 없이 사용하기에는 오히려 더 복잡하고 값을 누락시키는 원인이 되는 것 같아서 enum(열거형) 삭제
+  - select 메서드로 한 번에 원하는 메서드를 실행하도록 switch case 문을 수정
+  - addMenuItems 메서드로 가변 매개변수를 할당받아서 값을 MenuItems에 저장
+  - 반복문과 getMenuItems를 사용하여 메뉴판 출력
+  - 입력값을 받아서 조건문 실행 후 맞는 값 출력
+  - 프로그램이 실행되는 동안 예외값이 입력되면 예외처리 문구가 뜨면서 다시 한 번 값을 받게 설정 및 반복 설정
+  - 캡슐화의 경우 일부는 미적용된 부분이 있음.
+ 
+- **3, 4, 5에 대한 자세한 코드 해설은 [키오스크 만들기 (5)](https://velog.io/@wndid2008/TIL-%ED%82%A4%EC%98%A4%EC%8A%A4%ED%81%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0-5-2%EC%B0%A8-Error-fix)에서도 확인할 수 있습니다.**
 </details>
 
 <details>
