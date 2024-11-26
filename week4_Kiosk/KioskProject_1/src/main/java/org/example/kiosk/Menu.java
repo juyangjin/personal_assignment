@@ -1,16 +1,17 @@
 package org.example.kiosk;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Menu {
     private ArrayList<MenuItem> menuItems = new ArrayList<>(); //항목별 메뉴를 담을 menuItems 리스트 선언
+    private ArrayList<MenuItem> shopping_cart = new ArrayList<>(); //장바구니에 대한 리스트 선언
     MenuItem menuItem1; //메뉴를 위한 필드들 선언
     MenuItem menuItem2;
     MenuItem menuItem3;
     MenuItem menuItem4;
+    MenuItem cart_category;
+    double total;
 
     public void select(int i) {//매개변수를 int로 받는 메서드
         Scanner sc = new Scanner(System.in); //스캔을 위한 스캐너 선언
@@ -58,9 +59,42 @@ public class Menu {
         menuItems.addAll(Arrays.asList(item));//매개변수의 모든 값을 menuItems 리스트에 저장
     }
 
+    public void add_cart(int num){
+        shopping_cart.add(getMenuItems().get(num));
+        String[] print_tmp = getMenuItems().get(num).getName().split(" "); //메뉴판용 번호와 W 표시 제거를 위해 띄움 단위로 잘라서 임시배열 저장
+        System.out.println(print_tmp[1] + " 이(가) 장바구니에 추가되었습니다."); //저장된 중간 값을 출력
+    }
+
+    public void orders(int menu_num){
+        switch (menu_num){
+            case 4 -> order_print();
+            case 5 ->{
+                System.out.println("저장된 장바구니를 비웠습니다.");
+                shopping_cart.clear();
+            }
+            default -> System.out.println("잘못된 입력입니다.");
+        }
+    }
+
+    public void order_print(){
+        order_total();
+        System.out.println("[ Orders ]");
+        System.out.println(cart_category.print());
+        System.out.println("[ Total ]");
+        System.out.println("W" + total);
+    }
+
+    public void order_total(){
+        for(int i=0;i<shopping_cart.size();i++){
+            total += shopping_cart.get(i).getPrice();
+        }
+    }
+
     public ArrayList<MenuItem> getMenuItems() {
         return menuItems;
     } //menuItems에 대한 참조메서드
 
-
+    public ArrayList<MenuItem> getShopping_cart() {
+        return shopping_cart;
+    }
 }
