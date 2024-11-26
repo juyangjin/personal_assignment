@@ -11,7 +11,8 @@ public class Menu {
     MenuItem menuItem3;
     MenuItem menuItem4;
     MenuItem cart_category;
-    double total;
+    private int ortder_num;
+    private double total;
 
     public void select(int i) {//매개변수를 int로 받는 메서드
         Scanner sc = new Scanner(System.in); //스캔을 위한 스캐너 선언
@@ -65,23 +66,53 @@ public class Menu {
         System.out.println(print_tmp[1] + " 이(가) 장바구니에 추가되었습니다."); //저장된 중간 값을 출력
     }
 
-    public void orders(int menu_num){
+    public int orders(int menu_num){
         switch (menu_num){
-            case 4 -> order_print();
+            case 4 -> {
+                return order_print();
+            }
             case 5 ->{
                 System.out.println("저장된 장바구니를 비웠습니다.");
                 shopping_cart.clear();
             }
             default -> System.out.println("잘못된 입력입니다.");
         }
+        return 0;
     }
 
-    public void order_print(){
+    public int order_print(){
+        Scanner sc = new Scanner(System.in);
         order_total();
         System.out.println("[ Orders ]");
-        System.out.println(cart_category.print());
+        for(int i=0;i<shopping_cart.size();i++){
+            System.out.println(shopping_cart.get(i).print());
+        }
         System.out.println("[ Total ]");
-        System.out.println("W" + total);
+        System.out.println("W " + total);
+        System.out.println();
+        System.out.println("1. 주문       2.메뉴판");
+        int tmp = sc.nextInt();
+        return tmp;
+    }
+
+    public void setShopping_cart(ArrayList<MenuItem> shopping_cart) {
+        this.shopping_cart = shopping_cart;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public int getOrtder_num() {
+        return ortder_num;
+    }
+
+    public void setOrtder_num(int ortder_num) {
+        this.ortder_num = ortder_num;
     }
 
     public void order_total(){

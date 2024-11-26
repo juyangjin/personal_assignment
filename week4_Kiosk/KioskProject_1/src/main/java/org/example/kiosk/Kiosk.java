@@ -26,7 +26,17 @@ public class Kiosk extends Menu{ //Kiosk클래스는 Menu 클래스를 상속한
                 end = false;
                 break;
             }else if(menu_num == 4 || menu_num == 5){
-                orders(menu_num);
+                int o_num = orders(menu_num);
+                switch (o_num){
+                    case 1 -> {
+                        System.out.println("주문이 완료되었습니다. 금액은 W " + getTotal() + "입니다.");
+                        start(end);
+                    }
+                    case 2 -> start(end);
+                    default -> {
+                        System.out.println("잘못된 입력입니다.");
+                    }
+                }
             }else{
                 select(menu_num);//select 메서드를 해당 값을 매개변수로 호출한다.
                 for(int i=0;i<getMenuItems().size();i++){//menuItems값 만큼 반복
