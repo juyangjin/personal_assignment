@@ -1,8 +1,8 @@
 # personal_assignment
   - 스파르타 코딩클럽에서 만든 개인과제 페이지입니다.
 
-
 ## 1. week2-3_계산기 만들기
+### 1-1. 기본과제
 <details>
 <summary>Lv 1</summary>
   
@@ -44,6 +44,7 @@
 - **자세한 코드 해설은 [계산기 만들기 (2)](https://velog.io/@wndid2008/TIL-%EA%B3%84%EC%82%B0%EA%B8%B0-%EB%A7%8C%EB%93%A4%EA%B8%B0-2-%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC-Error)에서도 확인할 수 있습니다.**
 </details>
 
+### 1-2. 도전과제
 <details>
 <summary>Lv 3</summary>  
 
@@ -64,7 +65,7 @@
 
 
 ## 2. week4_키오스크 만들기
-
+### 2-1. 기본과제
 <details>
 <summary>Lv 1, 2</summary>  
   
@@ -118,6 +119,7 @@
 - **3, 4, 5에 대한 자세한 코드 해설은 [키오스크 만들기 (2)](https://velog.io/@wndid2008/TIL-%ED%82%A4%EC%98%A4%EC%8A%A4%ED%81%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0-2-%EC%A4%91%EA%B0%84-%ED%95%B4%EA%B2%B0%EA%B3%BC-Error%EC%BD%94%EB%93%9C)와 [키오스크 만들기 (5)](https://velog.io/@wndid2008/TIL-%ED%82%A4%EC%98%A4%EC%8A%A4%ED%81%AC-%EB%A7%8C%EB%93%A4%EA%B8%B0-5-2%EC%B0%A8-Error-fix)에서도 확인할 수 있습니다.**
 </details>
 
+### 2-2. 도전과제
 <details>
 <summary>Lv 6</summary>  
 
