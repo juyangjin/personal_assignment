@@ -11,6 +11,10 @@ public class MenuItem {
         this.explan = explan;
     }
 
+    public MenuItem() {
+
+    }
+
     public String print(){//각기 다른 변수유형을 위한 출력 메서드 선언
         return name + price + explan;//이름, 가격, 설명을 String 타입으로 리턴
     }
@@ -22,5 +26,6 @@ public class MenuItem {
     public double getPrice() {
         return price;
     }
+
 }
 
