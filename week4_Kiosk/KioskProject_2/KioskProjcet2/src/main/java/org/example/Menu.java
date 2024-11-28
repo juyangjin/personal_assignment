@@ -4,17 +4,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Menu {
-    private List<MenuItem> menuItems = new ArrayList<>(); //항목별 메뉴를 담을 menuItems 리스트 선언
-    private List<MenuItem> shopping_cart = new ArrayList<>(); //장바구니에 대한 리스트 선언
+    private static final String NUMBER_REG = "^[0-9]*$";
+    Shopping_cart cart = new Shopping_cart();
+    List<MenuItem> menuItems = new ArrayList<>();
     MenuItem menuItem1; //메뉴를 위한 필드들 선언
     MenuItem menuItem2;
     MenuItem menuItem3;
     MenuItem menuItem4;
-    MenuItem cart_category;
-    private int ortder_num;
-    private double total;
+    private String[] print_tmp;
+
+
+    public int parseNum(String num) throws BadInputException {
+        if(!Pattern.matches(NUMBER_REG,num)){
+            throw new BadInputException("숫자");
+        }
+        return Integer.parseInt(num);
+    }// 예외처리를 위한 파싱메서드
+
 
     public void select(int i) {//매개변수를 int로 받는 메서드
         Scanner sc = new Scanner(System.in); //스캔을 위한 스캐너 선언
@@ -58,86 +67,23 @@ public class Menu {
     }
     //버거 메서드와 동일한 방식으로 새로운 값들이 저장되나 항목이 하나 적다.
 
+    public void add_cart(int num) {
+        cart.getShopping_cart().add(getMenuItems().get(num));
+        cart.setShopping_cart(cart.getShopping_cart());
+        print_tmp = getMenuItems().get(num).getName().split(" "); //메뉴판용 번호와 W 표시 제거를 위해 띄움 단위로 잘라서 임시배열 저장
+        System.out.println(print_tmp[1] + " 이(가) 장바구니에 추가되었습니다."); //저장된 중간 값을 출력
+    }
+
     public void addMenuItems(MenuItem... item) {// ...을 사용하여 MenuItem 타입의 가변 매개변수를 받는다.
         menuItems.addAll(Arrays.asList(item));//매개변수의 모든 값을 menuItems 리스트에 저장
     }
 
-    public void add_cart(int num) {
-        shopping_cart.add(getMenuItems().get(num));
-        String[] print_tmp = getMenuItems().get(num).getName().split(" "); //메뉴판용 번호와 W 표시 제거를 위해 띄움 단위로 잘라서 임시배열 저장
-        System.out.println(print_tmp[1] + " 이(가) 장바구니에 추가되었습니다."); //저장된 중간 값을 출력
-    }
-
-    public int orders(int menu_num) {
-        switch (menu_num) {
-            case 4 -> {
-                return order_print();
-            }
-            case 5 -> {
-                System.out.println("저장된 장바구니를 비웠습니다.");
-                shopping_cart.clear();
-            }
-            default -> System.out.println("잘못된 입력입니다.");
-        }
-        return 0;
-    }
-
-    public int order_print() {
-        Scanner sc = new Scanner(System.in);
-        order_total();
-        System.out.println("[ Orders ]");
-        for (int i = 0; i < shopping_cart.size(); i++) {
-            System.out.println(shopping_cart.get(i).print());
-        }
-        System.out.println("[ Total ]");
-        System.out.println("W " + total);
-        System.out.println();
-        System.out.println("1. 주문       2.메뉴판");
-        int tmp = sc.nextInt();
-        return tmp;
-    }
-    public void Discnt(int num) {//매개변수를 int로 받는 메서드
-        Discount type;
-        try {
-            type = Discount.value(num);
-        } catch (BadInputException e) {
-            throw new RuntimeException(e);
-        }
-        type.dis(this);
-    }
-
-
-    public void setShopping_cart(List<MenuItem> shopping_cart) {
-        this.shopping_cart = shopping_cart;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
-    public int getOrtder_num() {
-        return ortder_num;
-    }
-
-    public void setOrtder_num(int ortder_num) {
-        this.ortder_num = ortder_num;
-    }
-
-    public void order_total() {
-        for (int i = 0; i < shopping_cart.size(); i++) {
-            total += shopping_cart.get(i).getPrice();
-        }
-    }
 
     public List<MenuItem> getMenuItems() {
         return menuItems;
     } //menuItems에 대한 참조메서드
 
-    public List<MenuItem> getShopping_cart() {
-        return shopping_cart;
+    public String[] getPrint_tmp() {
+        return this.print_tmp;
     }
 }
