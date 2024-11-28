@@ -1,11 +1,13 @@
-package org.example;
+package org.order;
+
+import org.exceptions.BadInputException;
+import org.Kiosk.MenuItem;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Shopping_cart {
-    private List<MenuItem> shopping_cart = new ArrayList<>(); //장바구니에 대한 리스트 선언
     private double total;
 
     public int orders(int menu_num) {
@@ -68,6 +70,14 @@ public class Shopping_cart {
     /*
     주문 총합량에 대한 메서드
      */
+
+    public void add_cart(int num) {
+        cart.getShopping_cart().add(getMenuItems().get(num));
+        cart.setShopping_cart(cart.getShopping_cart());
+        print_tmp = getMenuItems().get(num).getName().split(" "); //메뉴판용 번호와 W 표시 제거를 위해 띄움 단위로 잘라서 임시배열 저장
+        System.out.println(print_tmp[1] + " 이(가) 장바구니에 추가되었습니다."); //저장된 중간 값을 출력
+    }
+
 
     public List<MenuItem> getShopping_cart() {
         return shopping_cart;
