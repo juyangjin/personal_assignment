@@ -1,6 +1,6 @@
-package org.example;
+package org.order;
 
-import java.awt.font.OpenType;
+import org.exceptions.BadInputException;
 
 public enum Discount {
     Person_of_national_merit(1) {

@@ -1,51 +1,38 @@
-package org.example;
+package org.Kiosk;
+
+import org.exceptions.BadInputException;
+import org.exceptions.Parser;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
-public class Kiosk extends Menu {
+public class Kiosk {
+    List<MenuItem> menuItems;
+    List<MenuItem> shopping_cart;
+
     void start(boolean end) throws BadInputException {//start 메서드 시작되고 매개변수로 boolean 타입을 받는다.
+        Parser parser = new Parser();
+        Menu menu = new Menu(menuItems,shopping_cart);
         Scanner sc = new Scanner(System.in); //값을 스캔받기 위한 스캐너 선언
-        List<MenuItem> tmp = new ArrayList<>();
-        tmp.clear();
-            /*
-            값을 삭제할 때 사용할 tmp List를 선언 및 clear합니다.
-             */
-        cart.setShopping_cart(tmp); // 주문 실행 전에 장바구니를 비웁니다.
-        S : while (end) { // end가 true라면 실행
-            System.out.println("[ MAIN MENU ]");
-            System.out.println("1. Burgers  |");
-            System.out.println("2. Drinks   |");
-            System.out.println("3. Desserts |");
-            System.out.println("0. 종료      | 종료");
-            System.out.println();
 
-            /*
-            첫 번째 주문에서는 여기까지가 출력됩니다.
-            값이 이미 추가된 경우 장바구니 메뉴까지 출력됩니다.
-             */
-
-            if (cart.getShopping_cart().size() > 0) {
-                System.out.println("[ ORDER MENU ]");
-                System.out.println("4. Orders    | 장바구니를 확인 후 주문합니다.");
-                System.out.println("5. Cancel    | 진행중인 주문을 취소합니다.");
+        S: while (end) { // end가 true라면 실행
+            menu.category(); //첫번째 항목 선택지
+            for (int i = 0; i < menuItems.size(); i++) {
+                System.out.println(menuItems.get(i).print());
             }
 
-            /*
-            메뉴판에 없는 숫자를 입력할 경우 예외처리가 되며 에러메시지가 나옵니다.
-             */
+            // 두번째 항목 선택지
 
-            String str_menu1 = sc.nextLine(); //예외처리를 위한 String 입력받기
-            int menu1 = parseNum(str_menu1);
-            if (cart.getShopping_cart().isEmpty() && menu1 > 3) {
-                throw new BadInputException("메뉴에 있는 숫자");
-            }
+            // 장바구니 선택지
 
-            /*
-            첫번째 메뉴 번호가 0이라면 프로그램을 종료합니다.
-             */
+
+            System.out.println("0. 뒤로가기       | 종료"); //저장된 메뉴값이 아닌 뒤로가기 값을 출력
+            if()
+
+        }
+
+
 
             if (menu1 == 0) {
                 System.out.println("프로그램을 종료합니다.");//항목에 대한 숫자가 0이면 종료메시지 출력
@@ -104,12 +91,8 @@ public class Kiosk extends Menu {
                 위에 있는 예외들을 모두 제외시키면 비로소 제대로 된 메뉴가 출력되도록 select가 호출됩니다.
                 호출되어 계산된 값은 getMenuItems로 불러와서 상세 메뉴판이 출력되게 합니다.
                  */
-                select(menu1);
-                 for (int i = 0; i < getMenuItems().size(); i++) {
-                    System.out.println(getMenuItems().get(i).print());
-                }
-                System.out.println("0. 뒤로가기       | 종료"); //저장된 메뉴값이 아닌 뒤로가기 값을 출력
-            }
+
+
 
             String str_menu2 = sc.nextLine();//항목에 대한 상세 메뉴
             int menu2 = parseNum(str_menu2);

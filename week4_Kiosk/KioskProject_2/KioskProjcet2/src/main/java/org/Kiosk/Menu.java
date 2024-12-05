@@ -1,28 +1,57 @@
-package org.example;
+package org.Kiosk;
 
-import java.util.ArrayList;
+import org.exceptions.BadInputException;
+import org.exceptions.Parser;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class Menu {
-    private static final String NUMBER_REG = "^[0-9]*$";
-    Shopping_cart cart = new Shopping_cart();
-    List<MenuItem> menuItems = new ArrayList<>();
+    Parser parser = new Parser();
+
+    List<MenuItem> menuItems;
+    List<MenuItem> shopping_cart; //장바구니에 대한 선언
     MenuItem menuItem1; //메뉴를 위한 필드들 선언
     MenuItem menuItem2;
     MenuItem menuItem3;
     MenuItem menuItem4;
     private String[] print_tmp;
 
+    public Menu(List<MenuItem> menuItems,List<MenuItem> shopping_cart) {
+        this.menuItems = menuItems;
+        this.shopping_cart = shopping_cart;
+    }
 
-    public int parseNum(String num) throws BadInputException {
-        if(!Pattern.matches(NUMBER_REG,num)){
-            throw new BadInputException("숫자");
+    /*
+    항목 유형 메뉴에 대한 category 메서드
+     */
+    public void category() throws BadInputException {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("[ MAIN MENU ]");
+        System.out.println("1. Burgers  |");
+        System.out.println("2. Drinks   |");
+        System.out.println("3. Desserts |");
+        System.out.println("0. 종료      | 종료");
+        System.out.println();
+                   /*
+            첫 번째 주문에서는 여기까지가 출력됩니다.
+            값이 이미 추가된 경우 장바구니 메뉴까지 출력됩니다.
+             */
+        if (!shopping_cart.isEmpty()) {
+            System.out.println("[ ORDER MENU ]");
+            System.out.println("4. Orders    | 장바구니를 확인 후 주문합니다.");
+            System.out.println("5. Cancel    | 진행중인 주문을 취소합니다.");
         }
-        return Integer.parseInt(num);
-    }// 예외처리를 위한 파싱메서드
+            /*
+            메뉴판에 없는 숫자를 입력할 경우 예외처리가 되며 에러메시지가 나옵니다.
+             */
+        parser.parseCategory(sc.nextLine()); //예외처리를 위한 String 입력받기 및 형변환
+        if (shopping_cart.isEmpty() && menu1 > 3) {
+            throw new BadInputException("메뉴에 있는 숫자");
+        }
+        select(menu1);
+    }
+
 
 
     public void select(int i) {//매개변수를 int로 받는 메서드
@@ -35,6 +64,7 @@ public class Menu {
             default -> {
                 System.out.println("선택한 카테고리가 없습니다. 다시 선택해주세요.");
                 select(sc.nextInt()); //원하는 case가 아닌 값이 입력되면 예외 메시지가 출력되고 다시 값을 입력받는다.
+                sc.nextLine();
             }
         }
     }
@@ -67,12 +97,6 @@ public class Menu {
     }
     //버거 메서드와 동일한 방식으로 새로운 값들이 저장되나 항목이 하나 적다.
 
-    public void add_cart(int num) {
-        cart.getShopping_cart().add(getMenuItems().get(num));
-        cart.setShopping_cart(cart.getShopping_cart());
-        print_tmp = getMenuItems().get(num).getName().split(" "); //메뉴판용 번호와 W 표시 제거를 위해 띄움 단위로 잘라서 임시배열 저장
-        System.out.println(print_tmp[1] + " 이(가) 장바구니에 추가되었습니다."); //저장된 중간 값을 출력
-    }
 
     public void addMenuItems(MenuItem... item) {// ...을 사용하여 MenuItem 타입의 가변 매개변수를 받는다.
         menuItems.addAll(Arrays.asList(item));//매개변수의 모든 값을 menuItems 리스트에 저장

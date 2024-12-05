@@ -1,4 +1,4 @@
-package org.example;
+package org.exceptions;
 
 public class BadInputException extends Exception {
     public BadInputException(String type) {
