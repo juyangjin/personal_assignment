@@ -5,3 +5,4 @@
 
 ### [2. week4_키오스크 만들기](https://github.com/juyangjin/personal_assignment/blob/main/week4_Kiosk/README.md)
 
+### [3. week5_6 일정관리앱 만들기](https://github.com/juyangjin/personal_assignment/blob/main/week5_6_Planner/readme.md)
