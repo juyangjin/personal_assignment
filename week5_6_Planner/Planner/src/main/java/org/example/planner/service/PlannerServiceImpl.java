@@ -61,6 +61,13 @@ public class PlannerServiceImpl implements PlannerService {
     @Override
     public PlannerResponseDto updatePlan(Long id, String plans, String name, String password ,LocalDateTime revision_date) {
 
+
+        Planner planner = plannerRepository.findPlanByIdOrElseThrow(id);
+
+        if(!planner.getPassword().equals(password)){
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST," 비밀번호 오답");
+        }
+
         //필수값 검증
         if(plans == null || name == null) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"The plan and date are required values.");

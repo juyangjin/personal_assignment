@@ -26,7 +26,6 @@ public class JdbcTemplatePlannerRepository implements PlannerRepository {
     public JdbcTemplatePlannerRepository(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     // 생성
     @Override
@@ -44,7 +43,7 @@ public class JdbcTemplatePlannerRepository implements PlannerRepository {
 
         Number key = jdbcInsert.executeAndReturnKey(new MapSqlParameterSource(parameters));
 
-        return new PlannerResponseDto(key.longValue(), planner.getPlans(), planner.getName(), planner.getPassword(), LocalDateTime.now(),LocalDateTime.now());
+        return new PlannerResponseDto(key.longValue(), planner.getPlans(), planner.getName(), LocalDateTime.now(),LocalDateTime.now());
     }
 
     // 전체 조회
@@ -62,7 +61,6 @@ public class JdbcTemplatePlannerRepository implements PlannerRepository {
                         rs.getLong("id"),
                         rs.getString("plans"),
                         rs.getString("name"),
-                        rs.getString("password"),
                         rs.getTimestamp("date"),
                         rs.getTimestamp("revision_date")
                 );
