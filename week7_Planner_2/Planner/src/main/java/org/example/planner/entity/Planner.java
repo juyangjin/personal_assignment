@@ -17,9 +17,6 @@ public class Planner {
     private LocalDateTime date;
     private LocalDateTime revision_date;
 
-    public  String getPassword() {
-        return password != null ? "********" : null;
-    }
 
     public Planner(String plans, String name, String password, LocalDateTime date) {
         this.plans = plans;
